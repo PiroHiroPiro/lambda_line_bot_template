@@ -11,20 +11,21 @@ from linebot.exceptions import (
 )
 import logging
 
+
 logger = logging.getLogger()
 logger.setLevel(logging.ERROR)
 
-channel_secret = os.getenv('LINE_CHANNEL_SECRET_KEY', None)
-channel_access_token = os.getenv('LINE_CHANNEL_ACCESS_TOKEN', None)
-if channel_secret is None:
+line_channel_secret_key = os.getenv('LINE_CHANNEL_SECRET_KEY', None)
+line_channel_access_token = os.getenv('LINE_CHANNEL_ACCESS_TOKEN', None)
+if line_channel_secret_key is None:
     logger.error('Specify LINE_CHANNEL_SECRET_KEY as environment variable.')
     sys.exit(1)
-if channel_access_token is None:
+if line_channel_access_token is None:
     logger.error('Specify LINE_CHANNEL_ACCESS_TOKEN as environment variable.')
     sys.exit(1)
 
-line_bot_api = LineBotApi(channel_access_token)
-handler = WebhookHandler(channel_secret)
+line_bot_api = LineBotApi(line_channel_access_token)
+handler = WebhookHandler(line_channel_secret_key)
 
 
 def lambda_handler(event, context):

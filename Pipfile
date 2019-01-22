@@ -14,4 +14,4 @@ line-bot-sdk = "*"
 python_version = "3.6"
 
 [script]
-upload = "lambda-uploader --profile lambda"
+upload = "lambda-uploader"
