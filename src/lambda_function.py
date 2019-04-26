@@ -1,5 +1,7 @@
 import os
 import sys
+import logging
+
 from linebot import (
     LineBotApi, WebhookHandler
 )
@@ -9,7 +11,6 @@ from linebot.models import (
 from linebot.exceptions import (
     LineBotApiError, InvalidSignatureError
 )
-import logging
 
 
 logger = logging.getLogger()
