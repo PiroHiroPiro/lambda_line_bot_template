@@ -432,5 +432,6 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/code,git,linux,macos,osx,pycharm,pycharm+all,pycharm+iml,python,venv,virtualenv,windows
 
 # Custom ignore
-src/lambda.json
+.env
 Pipfile.lock
+source/lambda.json
